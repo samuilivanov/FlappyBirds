@@ -3,8 +3,9 @@ package com.sambio.flappy;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
-import org.lwjgl.glfw.GLFW;
+import org.lwjgl.opengl.GL;
 
+import com.sambio.flappy.input.Input;
 import static org.lwjgl.opengl.GL11.*;
 
 public class Main implements Runnable {
@@ -25,7 +26,8 @@ public class Main implements Runnable {
 	}
 	
 	private void init() {
-		if (!GLFW.glfwInit()) {
+		if (!glfwInit()) {
+			//TODO::
 			System.out.println("ops");
 		}
 		
@@ -34,9 +36,16 @@ public class Main implements Runnable {
 		
 
 		glfwSetWindowPos(window, 100, 100);
+		
+		glfwSetKeyCallback(window, new Input());
+		
 		glfwMakeContextCurrent(window);
 		glfwShowWindow(window);
+		GL.createCapabilities();
 		
+		glClearColor(255, 255, 255, 255);
+		glEnable(GL_DEPTH_TEST);
+		System.out.println("OpenGL: " + glGetString(GL_VERSION));
 		
 	}
 	
@@ -50,24 +59,24 @@ public class Main implements Runnable {
 			if (glfwWindowShouldClose(window) == true) {
 				running = false;
 			}
-		}
-		
-
-		
+		}		
 	}
 	
 	private void update() {
 		glfwPollEvents();
+		if (Input.keys[GLFW_KEY_SPACE]) {
+			System.out.println("FLAT");
+		}
 	}
 	
 	private void render() {
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		glfwSwapBuffers(window);
 		
 	}
 	
 	public static void main(String[] args) {
 		new Main().Start();
-
 	}
 
 }
