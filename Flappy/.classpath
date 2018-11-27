@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con"
+		path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8" />
+	<classpathentry kind="src" path="src" />
+	<classpathentry kind="lib"
+		path="/home/sambio/Documents/java_projects/libs/lwjgl-stable-2018-11-26-custom/lwjgl.jar" />
+	<classpathentry kind="lib"
+		path="/home/sambio/Documents/java_projects/libs/lwjgl-stable-2018-11-26-custom/lwjgl-glfw.jar" />
+	<classpathentry kind="lib"
+		path="/home/sambio/Documents/java_projects/libs/lwjgl-stable-2018-11-26-custom/lwjgl-glfw-natives-linux.jar" />
+	<classpathentry kind="lib"
+		path="/home/sambio/Documents/java_projects/libs/lwjgl-stable-2018-11-26-custom/lwjgl-natives-linux.jar" />
+	<classpathentry kind="lib"
+		path="/home/sambio/Documents/java_projects/libs/lwjgl-stable-2018-11-26-custom/lwjgl-opengl.jar" />
+	<classpathentry kind="lib"
+		path="/home/sambio/Documents/java_projects/libs/lwjgl-stable-2018-11-26-custom/lwjgl-opengl-natives-linux.jar" />
+	<classpathentry kind="output" path="bin" />
+</classpath>
